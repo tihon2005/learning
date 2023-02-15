@@ -19,7 +19,11 @@ class ViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.label.text = String(indexPath.row + 1)
-        cell.backgroundColor = .green
+        if (indexPath.row + 1)%2 == 0{
+            cell.backgroundColor = .green
+        }else{
+            cell.backgroundColor = .red
+        }
         return cell
     }
 }
